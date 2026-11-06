@@ -1,0 +1,19 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "fork-delegate-merge-workshop",
+  "main": "src/worker.ts",
+  "compatibility_date": "2026-11-04",
+  "compatibility_flags": ["nodejs_compat"],
+  "vars": {
+    "MODEL": "@cf/ibm-granite/granite-4.0-h-micro",
+    "MAX_STEPS": "8"
+  },
+  "ai": { "binding": "AI" },
+  "d1_databases": [
+    {
+      "binding": "INCIDENT_EVIDENCE",
+      "database_name": "fork-delegate-merge-evidence",
+      "database_id": "REPLACE_WITH_YOUR_DATABASE_ID"
+    }
+  ]
+}

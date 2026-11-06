@@ -1,0 +1,28 @@
+{
+  "name": "fork-delegate-merge-workshop",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "npm run build && node --test dist/tests/*.test.js",
+    "workshop": "npm run build && node dist/src/workshop.js",
+    "smoke": "npm run build && node dist/src/smoke.js",
+    "demo:fork": "npm run build && node dist/src/demos/fork.js",
+    "demo:merge": "npm run build && node dist/src/demos/merge.js",
+    "demo:approval": "npm run build && node dist/src/demos/approval.js",
+    "demo:full": "npm run build && node dist/src/demos/full.js",
+    "deploy:cf": "wrangler deploy --config wrangler.jsonc",
+    "workshop:cf": "wrangler dev --config wrangler.jsonc",
+    "demo:full:cf": "node scripts/cloudflare-demo.mjs"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "wrangler": "^4.0.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
