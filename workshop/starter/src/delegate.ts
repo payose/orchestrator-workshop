@@ -40,8 +40,23 @@ export function buildDelegateTool(options: DelegateOptions): AgentTool {
         required: ['task'],
       },
     },
-    run: async (_args: unknown) => {
-      // Replace this error during the exercise.
+    run: async (args: unknown) => {
+     
+    //   if (!isRecord(args) || typeof args.task !== 'string') throw new Error('delegate needs a task string');
+    //   const requested = Array.isArray(args.tools)
+    //     ? args.tools.filter((name): name is string => typeof name === 'string')
+    //     : options.allTools.map((tool) => tool.schema.name);
+    //   const subset = options.allTools.filter((tool) => requested.includes(tool.schema.name));
+    //   if (!subset.length) throw new Error('delegate: no valid tools selected');
+    //   const report = await runAgent({
+    //     objective: args.task,
+    //     context: typeof args.context === 'string' ? args.context : undefined,
+    //     tools: subset,
+    //     maxSteps: typeof args.maxSteps === 'number' ? args.maxSteps : options.defaultMaxSteps ?? 6,
+    //     infer: options.infer,
+    //   });
+    //   return { status: report.status, stepsUsed: report.stepsUsed, conclusion: report.finalAnswer };
+
       throw new Error('TODO: implement bounded delegation');
     },
   };
